@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:flutter/cupertino.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,9 +22,12 @@ class SignIn extends StatefulWidget {
 class SignInView extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("sign in")),
-      body: Padding(padding: EdgeInsets.all(16.0), child: _buildSignIn()),
+    return CupertinoPageScaffold(
+      navigationBar: const CupertinoNavigationBar(middle: Text('signal')),
+      child: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: _buildSignIn(),
+      ),
     );
   }
 
@@ -47,6 +51,11 @@ class SignInView extends State<SignIn> {
         },
         decoration: InputDecoration(hintText: "pw"),
       ),
+      CupertinoButton.filled(
+        onPressed: () {},
+        child: Text("sign in"),
+        disabledColor: CupertinoColors.inactiveGray,
+      )
     ]);
   }
 }
