@@ -8,8 +8,46 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Startup Name Generator',
-      home: RandomWords(),
+      home: SignIn(),
     );
+  }
+}
+
+class SignIn extends StatefulWidget {
+  @override
+  SignInView createState() => SignInView();
+}
+
+class SignInView extends State<SignIn> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("sign in")),
+      body: Padding(padding: EdgeInsets.all(16.0), child: _buildSignIn()),
+    );
+  }
+
+  Widget _buildSignIn() {
+    return Column(children: [
+      TextField(
+        onSubmitted: (String text) {
+          setState(() {
+            if (true) {
+            } else {}
+          });
+        },
+        decoration: InputDecoration(hintText: "id"),
+      ),
+      TextField(
+        onSubmitted: (String text) {
+          setState(() {
+            if (true) {
+            } else {}
+          });
+        },
+        decoration: InputDecoration(hintText: "pw"),
+      ),
+    ]);
   }
 }
 
